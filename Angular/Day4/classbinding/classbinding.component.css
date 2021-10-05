@@ -1,0 +1,18 @@
+
+.success{
+    color: green;
+}
+
+.danger{
+    color: red;
+}
+
+.warning{
+    color: blueviolet
+}
+
+.special{
+    font-style: italic;
+    font-size: 32px;
+    
+}
