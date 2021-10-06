@@ -1,0 +1,35 @@
+<p>event-binding1 works!</p>
+
+<!-- syntax => (eventName)="CustomMethodName()" -->
+
+<button (click)="onClick()" >Click</button>
+
+<br><br>
+<img src="../../assets/bg.jpeg" (click)="onImageClick()"
+alt=""> <br><br>
+
+<!-- $event=>
+     it is special variable given by angular -->
+<!-- what is use? -->
+    <!-- It gives current dom element information 
+        to you basically it is object -->
+
+<button (click)="onSend($event)" value="doller event..."
+>Send</button> <br><br>
+
+<!-- template ref.variable -->
+<!-- what is use? -->
+ <!-- If u want get data from html dom 
+    element u can use templ.ref.variable -->
+
+    <input type="text" #inputname
+    placeholder="Enter the name"> <br><br>
+    <button 
+    (click)="onSendData(inputname)">
+    Send data</button> <br><br>
+
+    <input type="text" #inputname1
+    placeholder="Enter the name1"> <br><br>
+    <button 
+    (click)="onSendData1(inputname1.value)">
+    Send data</button>
