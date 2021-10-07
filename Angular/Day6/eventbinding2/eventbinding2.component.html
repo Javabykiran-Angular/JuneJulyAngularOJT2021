@@ -1,0 +1,23 @@
+<p>eventbinding2 works!</p>
+
+<!-- <input #inputnum1 type="text" placeholder="Enter the Number1"><br><br>
+<input #inputnum2 type="text" placeholder="Enter the Number2"><br><br>
+<button (click)="onAddition(inputnum1.value,inputnum2.value)" >Addition</button><br><br>
+<input type="text" placeholder="Result" [value]="result" >
+<hr>
+
+<input type="text" #inputname (change)="onChange(inputname)" placeholder="Enter the name"> -->
+
+<!-- <input type="text" (keyup)="onKeyUp()" placeholder="Key up event">
+<br><br>
+
+<input type="text" (keydown)="onKeydown()" placeholder="Key down event"> -->
+
+<h2>Two Way Binding</h2>
+<!-- syntax=> [()]=> Bannana in the box
+        [(ngModel)]="propertyName" 
+        when we use ngModel then u have import FormsModule that given by angular
+        we have import that module in app.module.ts in import section -->
+
+ <input type="text" [(ngModel)]="name" > {{name}}    
+ 
