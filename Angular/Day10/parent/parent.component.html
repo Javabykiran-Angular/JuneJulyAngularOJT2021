@@ -1,0 +1,13 @@
+<p>parent works!</p>
+<div>
+<input type="number" #inputnum
+placeholder="enter the number">
+<button (click)="OnSend(inputnum.value)">Send</button>
+</div>
+<hr>
+<!-- <app-child1 
+[ParentStrData]="strdata"
+ [ParentJsonData]="jsonObj">
+</app-child1> -->
+
+<app-child1 [ParentNumberData]="num"></app-child1>
