@@ -1,0 +1,28 @@
+<p>parent works!</p>
+<!-- <div>
+<input type="number" #inputnum
+placeholder="enter the number">
+<button (click)="OnSend(inputnum.value)">Send</button>
+</div> -->
+
+<!-- <h2> {{ChildStrData}} </h2>
+
+<h2>Id:: {{ChildJsonData.id}} </h2>
+<h2>Name:: {{ChildJsonData.name}} </h2>
+<h2>Status :: {{ChildJsonData.status}} </h2> -->
+
+<hr>
+<!-- <app-child1 
+[ParentStrData]="strdata"
+ [ParentJsonData]="jsonObj">
+</app-child1> -->
+
+<!-- <app-child1 [ParentNumberData]="num"></app-child1> -->
+
+<!-- <app-child2 
+(ChildStrEvent)="ChildStrData=$event"
+(ChildJsonEvent)="ChildJsonData=$event"
+>
+</app-child2> -->
+
+<app-child3 (ChildNumberEvent)=OnChildEvent($event)></app-child3>
