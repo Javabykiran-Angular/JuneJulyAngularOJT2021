@@ -1,0 +1,17 @@
+<p>query-param works!</p>
+<div class="container">
+    <input #inputdata type="text" class="form-control" 
+    placeholder="Enter the String data"> <br>
+    
+    <button class="btn btn-success" (click)="onSend(inputdata.value)">Send</button>
+</div>
+
+<h2> Notification Data is {{notificationData}} </h2>
+
+<hr>
+<h2> ID:: {{myjson.id}} </h2>
+<h2>Name :: {{myjson.name}} </h2>
+
+<h2>Status :: {{myjson.status}} </h2>
+
+<a routerLink="">Home</a>
