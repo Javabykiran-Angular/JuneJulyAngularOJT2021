@@ -1,0 +1,101 @@
+ng new project-work
+
+database Table
+Registration
+which colum is required
+
+ - id - primary auto increment
+ - username - varchar 50
+ - email id - varchar 250 unique
+ - password  - varchar 50
+ - mobile no - varchar 50
+ - gender    - varchar 20
+ - address   - varchar 250
+ - city		-	varchar 50
+ - first name - varchar 50
+ - last name  - varchar 50
+ - createdDate - DateTime
+ 
+ @Entity
+ @Table
+ class Registration{
+	
+	@Id
+	@GeneratedValue(startgey= "GenertionType.identity")
+	private int id;
+	
+	@coloumn
+	private String Username;
+	
+	@coloumn(unique)
+	private String emailId;
+	
+	private Date createdDate;
+	
+ }
+ 
+ // Login APi
+ 
+ Front End => emailid & password json object
+ 
+ {
+	"emailId":"abc@gmail.com",
+	"password": "abc123"
+ }
+ 
+ @CrossOrigin()
+ @RestController
+ @RequestMapping("/api")
+ class EmplyoeeController{
+ 
+	@Autowire
+	EmployeeService service;
+	
+	@PostMapping("/logincheck")
+	public HashMap LoginCheck(@RequestBody Registration reg){
+			
+			HashMap map=service.LoginCheck(reg);
+			
+			return map;
+		
+	}	
+ 
+ }
+ 
+ service Class
+	public HashMap LoginCheck(Registration reg){
+		Registration user =dao.LoginCheck(reg);
+		
+		HashMap map=new HashMap();	
+		
+		if(user==null){
+			map.put("msg","Invalid User");
+			map.put("user",user)
+		}else{
+			map.put("msg","Valid User");
+			user.setPassword("******");
+			map.put("user",user);
+		}
+		
+		return map;
+		
+	}
+	
+	Dao Class code 
+	public Registration LoginCheck(Registration reg){
+		Session session=sessionfactory.openSession();
+		
+		Criteria criteria=session.createCriteria(Registration.class);
+		
+		criteria.add(Restrictions.eq("email", useremail));  
+		criteria.add(Restrictions.eq("password",userpassword));
+		Registration user= (Registration) criteria.uniqueResult();
+		System.out.println("user--"+user);
+				
+		return user;
+	
+	}
+ 
+ 
+ 
+ 
